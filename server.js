@@ -19,9 +19,9 @@ server.post('/calculator', function(req, res){
             throw new Error ("Invalid term provided.")
         }
         const mathExpression = eval(body);
-        return res.status(200).json({message: mathExpression});
+        return res.status(200).json({result: mathExpression});
     } catch(error) {
-        return res.status(422).json({error: error.message})
+        return res.status(422).json({error: error.result})
     }
 });
 
